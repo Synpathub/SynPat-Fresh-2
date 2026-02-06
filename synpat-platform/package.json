@@ -1,0 +1,11 @@
+{
+  "name": "synpat-platform",
+  "version": "1.0.0",
+  "description": "Assets for SynPat Platform WordPress Plugin",
+  "scripts": {
+    "build": "echo 'No build process required yet'",
+    "watch": "echo 'No watch process required yet'"
+  },
+  "devDependencies": {},
+  "dependencies": {}
+}
