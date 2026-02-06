@@ -163,7 +163,7 @@ class Customer_Service {
 	 * @return array
 	 */
 	public function get_all( $args = array() ) {
-		$cache_key = 'customers_' . md5( serialize( $args ) );
+		$cache_key = 'customers_' . md5( wp_json_encode( $args ) );
 		$cached = $this->get_cache( $cache_key );
 		
 		if ( false !== $cached ) {

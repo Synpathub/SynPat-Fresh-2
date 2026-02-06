@@ -167,7 +167,7 @@ class License_Service {
 	 * @return array
 	 */
 	public function get_all( $args = array() ) {
-		$cache_key = 'licenses_' . md5( serialize( $args ) );
+		$cache_key = 'licenses_' . md5( wp_json_encode( $args ) );
 		$cached = $this->get_cache( $cache_key );
 		
 		if ( false !== $cached ) {
@@ -564,7 +564,7 @@ class License_Service {
 	private function calculate_expiry_date( $start_date, $duration_months ) {
 		$timestamp = strtotime( $start_date );
 		$expiry_timestamp = strtotime( "+{$duration_months} months", $timestamp );
-		return date( 'Y-m-d H:i:s', $expiry_timestamp );
+		return gmdate( 'Y-m-d H:i:s', $expiry_timestamp );
 	}
 	
 	/**
