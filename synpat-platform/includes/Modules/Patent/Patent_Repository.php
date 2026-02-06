@@ -431,7 +431,7 @@ class Patent_Repository {
 		global $wpdb;
 		
 		$table = $wpdb->prefix . 'synpat_patents';
-		$date = date( 'Y-m-d', strtotime( "+{$days} days" ) );
+		$date = gmdate( 'Y-m-d', strtotime( "+{$days} days" ) );
 		
 		$sql = $wpdb->prepare(
 			"SELECT * FROM {$table}

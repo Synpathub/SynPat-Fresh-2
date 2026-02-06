@@ -341,7 +341,7 @@ class Patent_Importer {
 			return null;
 		}
 		
-		return date( 'Y-m-d', $timestamp );
+		return gmdate( 'Y-m-d', $timestamp );
 	}
 	
 	/**
@@ -409,6 +409,6 @@ class Patent_Importer {
 		
 		$expiration_timestamp = strtotime( "+{$years} years", $filing_timestamp );
 		
-		return date( 'Y-m-d', $expiration_timestamp );
+		return gmdate( 'Y-m-d', $expiration_timestamp );
 	}
 }
